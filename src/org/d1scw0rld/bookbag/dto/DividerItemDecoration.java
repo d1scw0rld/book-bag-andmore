@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.discworld.booksbag.dto;
+package org.d1scw0rld.bookbag.dto;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;

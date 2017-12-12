@@ -1,4 +1,4 @@
-package com.discworld.booksbag;
+package org.d1scw0rld.bookbag;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,17 +20,17 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.text.InputType;
 import android.util.Log;
 
-import com.discworld.booksbag.dto.Book;
-import com.discworld.booksbag.dto.Field;
-import com.discworld.booksbag.dto.FieldType;
-import com.discworld.booksbag.dto.FileUtils;
-import com.discworld.booksbag.dto.ParentResult;
-import com.discworld.booksbag.dto.Result;
+import org.d1scw0rld.bookbag.dto.Book;
+import org.d1scw0rld.bookbag.dto.Field;
+import org.d1scw0rld.bookbag.dto.FieldType;
+import org.d1scw0rld.bookbag.dto.FileUtils;
+import org.d1scw0rld.bookbag.dto.ParentResult;
+import org.d1scw0rld.bookbag.dto.Result;
 
 public class DBAdapter
 {
-	public static final String DATABASE_NAME = "books_bag.db",
-	                           DB_PATH = "//data//com.discworld.booksbag//databases//";
+	public static final String DATABASE_NAME = "book_bag.db",
+	                           DB_PATH = "//data//org.d1scw0rld.bookbag//databases//";
 
 	private static final String TAG = "DB";
 	

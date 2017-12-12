@@ -1,8 +1,8 @@
-package com.discworld.booksbag.fields;
+package org.d1scw0rld.bookbag.fields;
 
 import java.util.ArrayList;
 
-import com.discworld.booksbag.R;
+import org.d1scw0rld.bookbag.R;
 
 import android.app.Activity;
 import android.support.v7.app.AlertDialog;

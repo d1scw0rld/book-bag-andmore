@@ -1,4 +1,4 @@
-package com.discworld.booksbag;
+package org.d1scw0rld.bookbag;
 
 import java.util.ArrayList;
 
@@ -15,11 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.discworld.booksbag.dto.Book;
-import com.discworld.booksbag.dto.Date;
-import com.discworld.booksbag.dto.Field;
-import com.discworld.booksbag.dto.FieldType;
-import com.discworld.booksbag.dto.Price;
+import org.d1scw0rld.bookbag.dto.Book;
+import org.d1scw0rld.bookbag.dto.Date;
+import org.d1scw0rld.bookbag.dto.Field;
+import org.d1scw0rld.bookbag.dto.FieldType;
+import org.d1scw0rld.bookbag.dto.Price;
 
 /**
  * A fragment representing a single Book detail screen.

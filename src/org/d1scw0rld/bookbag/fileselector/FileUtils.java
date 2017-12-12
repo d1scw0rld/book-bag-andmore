@@ -1,4 +1,4 @@
-package com.discworld.booksbag.fileselector;
+package org.d1scw0rld.bookbag.fileselector;
 
 import java.io.File;
 import java.util.Locale;

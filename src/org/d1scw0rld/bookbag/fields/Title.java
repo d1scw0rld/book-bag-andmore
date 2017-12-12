@@ -1,10 +1,6 @@
-package com.discworld.booksbag.fields;
+package org.d1scw0rld.bookbag.fields;
 
-import com.discworld.booksbag.R;
-import com.discworld.booksbag.R.id;
-import com.discworld.booksbag.R.layout;
-import com.discworld.booksbag.R.styleable;
-
+import org.d1scw0rld.bookbag.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;

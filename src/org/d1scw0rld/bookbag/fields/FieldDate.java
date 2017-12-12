@@ -1,9 +1,9 @@
-package com.discworld.booksbag.fields;
+package org.d1scw0rld.bookbag.fields;
 
 import java.util.Calendar;
 
-import com.discworld.booksbag.R;
-import com.discworld.booksbag.dto.Date;
+import org.d1scw0rld.bookbag.R;
+import org.d1scw0rld.bookbag.dto.Date;
 
 import android.app.Activity;
 //import android.app.DatePickerDialog;
@@ -22,7 +22,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.LinearLayout;
 
 public class FieldDate extends LinearLayout implements OnDateSetListener

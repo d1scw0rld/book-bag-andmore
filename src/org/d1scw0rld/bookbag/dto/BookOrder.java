@@ -1,4 +1,4 @@
-package com.discworld.booksbag.dto;
+package org.d1scw0rld.bookbag.dto;
 
 public enum BookOrder
 {

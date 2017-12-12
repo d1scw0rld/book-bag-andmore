@@ -1,4 +1,4 @@
-package com.discworld.booksbag.fileselector;
+package org.d1scw0rld.bookbag.fileselector;
 
 /**
  * This class contais information about the file name and type

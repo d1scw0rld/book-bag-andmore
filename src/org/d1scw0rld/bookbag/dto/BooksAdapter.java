@@ -1,4 +1,4 @@
-package com.discworld.booksbag.dto;
+package org.d1scw0rld.bookbag.dto;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.discworld.booksbag.R;
+import org.d1scw0rld.bookbag.R;
 
 public class BooksAdapter extends ExpandableRecyclerAdapter<BooksAdapter.BookListItem>
 {

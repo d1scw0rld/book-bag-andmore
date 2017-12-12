@@ -1,12 +1,11 @@
-package com.discworld.booksbag.fileselector;
+package org.d1scw0rld.bookbag.fileselector;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.discworld.booksbag.R;
+import org.d1scw0rld.bookbag.R;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -25,13 +24,13 @@ public class FileListAdapter extends BaseAdapter
 
    private final Context mContext;
    
-   private LayoutInflater oInflater;
+//   private LayoutInflater oInflater;
 
    public FileListAdapter(Context context, List<FileData> aFileDataArray)
    {
       mFileDataArray = (ArrayList<FileData>) aFileDataArray;
       mContext = context;
-      oInflater = LayoutInflater.from(context);
+//      oInflater = LayoutInflater.from(context);
    }
 
    @Override
@@ -84,7 +83,8 @@ public class FileListAdapter extends BaseAdapter
       int imgRes = -1;
       if (convertView == null) 
       {
-         convertView = (LinearLayout)oInflater.inflate(R.layout.row_file, null);
+//         convertView = (LinearLayout)oInflater.inflate(R.layout.row_file, null);
+         convertView = (LinearLayout)View.inflate(mContext, R.layout.row_file, null);
          holder = new ViewHolder();
          holder.tvFileName = (TextView) convertView.findViewById(R.id.tv_file_name);
          holder.ivFileType = (ImageView) convertView.findViewById(R.id.iv_file_type);

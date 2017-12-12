@@ -1,4 +1,4 @@
-package com.discworld.booksbag;
+package org.d1scw0rld.bookbag;
 
 import android.content.Intent;
 import android.os.Bundle;

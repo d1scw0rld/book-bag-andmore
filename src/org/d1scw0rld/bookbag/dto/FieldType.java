@@ -1,4 +1,4 @@
-package com.discworld.booksbag.dto;
+package org.d1scw0rld.bookbag.dto;
 
 /**
  * Created by Iasen on 12.7.2016 г..

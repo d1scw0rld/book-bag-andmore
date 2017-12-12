@@ -1,4 +1,4 @@
-package com.discworld.booksbag;
+package org.d1scw0rld.bookbag;
 
 public final class Debug
 {

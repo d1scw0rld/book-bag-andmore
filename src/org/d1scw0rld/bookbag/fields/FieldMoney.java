@@ -1,15 +1,10 @@
-package com.discworld.booksbag.fields;
+package org.d1scw0rld.bookbag.fields;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.discworld.booksbag.DBAdapter;
-import com.discworld.booksbag.R;
-import com.discworld.booksbag.R.id;
-import com.discworld.booksbag.R.layout;
-import com.discworld.booksbag.R.string;
-import com.discworld.booksbag.R.styleable;
-
+import org.d1scw0rld.bookbag.DBAdapter;
+import org.d1scw0rld.bookbag.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.text.InputFilter;

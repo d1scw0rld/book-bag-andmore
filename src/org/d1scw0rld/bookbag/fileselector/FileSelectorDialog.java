@@ -1,10 +1,10 @@
-package com.discworld.booksbag.fileselector;
+package org.d1scw0rld.bookbag.fileselector;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.discworld.booksbag.R;
+import org.d1scw0rld.bookbag.R;
 
 import android.support.v7.app.AlertDialog;
 import android.app.Dialog;
@@ -15,7 +15,6 @@ import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -109,8 +108,8 @@ public class FileSelectorDialog extends DialogFragment
       AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AppCompatAlertDialogStyle);
       mContext = getContext();
 
-      LayoutInflater inflater = getActivity().getLayoutInflater();
-      v = inflater.inflate(R.layout.dialog_file, null);
+//      LayoutInflater inflater = getActivity().getLayoutInflater();
+      v = View.inflate(mContext, R.layout.dialog_file, null);
       builder.setView(v);
 
       etFileName = (EditText) v.findViewById(R.id.fileName);

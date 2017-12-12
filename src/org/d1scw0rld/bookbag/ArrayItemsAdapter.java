@@ -1,4 +1,4 @@
-package com.discworld.booksbag;
+package org.d1scw0rld.bookbag;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
 
-import com.discworld.booksbag.fields.FieldMultiText.Item;
+import org.d1scw0rld.bookbag.fields.FieldMultiText.Item;
 
 public class ArrayItemsAdapter extends ArrayAdapter<Item> 
 {

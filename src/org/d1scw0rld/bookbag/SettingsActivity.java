@@ -1,8 +1,6 @@
-package com.discworld.booksbag;
+package org.d1scw0rld.bookbag;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.view.LayoutInflater;

@@ -1,9 +1,9 @@
-package com.discworld.booksbag.fields;
+package org.d1scw0rld.bookbag.fields;
 
 import java.util.ArrayList;
 
-import com.discworld.booksbag.R;
-import com.discworld.booksbag.fields.AutoCompleteTextViewX.OnUpdateListener;
+import org.d1scw0rld.bookbag.R;
+import org.d1scw0rld.bookbag.fields.AutoCompleteTextViewX.OnUpdateListener;
 
 import android.content.Context;
 import android.content.res.TypedArray;
