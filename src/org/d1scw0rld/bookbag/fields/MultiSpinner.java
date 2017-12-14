@@ -89,6 +89,8 @@ public class MultiSpinner extends Spinner implements DialogInterface.OnCancelLis
    @Override
    public boolean performClick()
    {
+      super.performClick();
+      
       AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
       ListView lvItems = new ListView(getContext());
       customAdapter = new CustomAdapter(getContext(), 0, 0, listitems);
@@ -179,13 +181,13 @@ public class MultiSpinner extends Spinner implements DialogInterface.OnCancelLis
 
    private class CustomAdapter extends BaseAdapter
    {
-      private Context context;
+//      private Context context;
       private List<String> lsFields;
       LayoutInflater inflater;
 
-      public CustomAdapter(Context context, int resource, int textViewResourceId, List objects)
+      public CustomAdapter(Context context, int resource, int textViewResourceId, List<String> objects)
       {
-         this.context = context;
+//         this.context = context;
          this.lsFields = objects;
          inflater = ((Activity) context).getLayoutInflater();
       }

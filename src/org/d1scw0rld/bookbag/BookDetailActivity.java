@@ -138,12 +138,12 @@ public class BookDetailActivity extends AppCompatActivity
       Bundle arguments = new Bundle();
 //    arguments.putString(BookDetailFragment.ARG_ITEM_ID, getIntent().getStringExtra(BookDetailFragment.ARG_ITEM_ID));
 //    arguments.putLong(BookDetailFragment.ARG_ITEM_ID, getIntent().getLongExtra(BookDetailFragment.ARG_ITEM_ID, 0));
-    arguments.putLong(BookDetailFragment.ARG_ITEM_ID, iBookID);
-    BookDetailFragment fragment = new BookDetailFragment();
-    fragment.setArguments(arguments);
-    getSupportFragmentManager().beginTransaction()
-                               .replace(R.id.book_detail_container, fragment)
-                               .commitAllowingStateLoss();
+      arguments.putLong(BookDetailFragment.ARG_ITEM_ID, iBookID);
+      BookDetailFragment fragment = new BookDetailFragment();
+      fragment.setArguments(arguments);
+      getSupportFragmentManager().beginTransaction()
+                                 .replace(R.id.book_detail_container, fragment)
+                                 .commitAllowingStateLoss();
    }
 
    @Override

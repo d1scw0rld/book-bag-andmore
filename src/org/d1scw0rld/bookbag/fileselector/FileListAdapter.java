@@ -100,10 +100,10 @@ public class FileListAdapter extends BaseAdapter
       {
          case FileData.UP_FOLDER:
          {
-            imgRes = R.drawable.ic_folder;
+            imgRes = R.drawable.ic_folder_open;
             break;
          }
-         case FileData.DIRECTORY:
+         case FileData.FOLDER:
          {
             imgRes = R.drawable.ic_folder;
             break;

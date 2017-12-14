@@ -426,7 +426,7 @@ public class FileSelectorDialog extends DialogFragment
             File tempFile = listFiles[index];
             if(FileUtils.accept(tempFile, fitlesFilter))
             {
-               int type = tempFile.isDirectory() ? FileData.DIRECTORY : FileData.FILE;
+               int type = tempFile.isDirectory() ? FileData.FOLDER : FileData.FILE;
                fileDataList.add(new FileData(listFiles[index].getName(),
                                              type));
             }

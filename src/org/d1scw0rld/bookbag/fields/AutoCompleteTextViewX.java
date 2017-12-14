@@ -40,7 +40,6 @@ public class AutoCompleteTextViewX extends android.support.v7.widget.AppCompatAu
                inputManager.toggleSoftInput(0, 0);
             }
             v.clearFocus();
-            return false; 
          }
          return false;      
       }
@@ -89,6 +88,9 @@ public class AutoCompleteTextViewX extends android.support.v7.widget.AppCompatAu
        public boolean onTouch(View v, MotionEvent event) 
        {
            final int DRAWABLE_RIGHT = 2;
+           
+           // Only for warning disposal
+           v.performClick();
 
            if (event.getAction() == MotionEvent.ACTION_UP) 
            {
@@ -105,7 +107,7 @@ public class AutoCompleteTextViewX extends android.support.v7.widget.AppCompatAu
            return false;
        }
    };
-
+   
    public AutoCompleteTextViewX(final Context context)
    {
       super(context);
@@ -147,6 +149,14 @@ public class AutoCompleteTextViewX extends android.support.v7.widget.AppCompatAu
       setOnTouchListener(onTouchListener);      
    }
    
+   // Only for warning disposal
+   @Override
+   public boolean performClick()
+   {
+      return super.performClick();
+   }
+
+
    @Override
    public boolean onKeyPreIme(int keyCode, KeyEvent event)
    {

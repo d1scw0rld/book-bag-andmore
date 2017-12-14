@@ -3,6 +3,7 @@ package org.d1scw0rld.bookbag;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.support.v4.os.ConfigurationCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -13,18 +14,22 @@ import org.d1scw0rld.bookbag.dto.Field;
 
 public class ArrayFieldsAdapter extends ArrayAdapter<Field> 
 {
-   private final String MY_DEBUG_TAG = "ArrayFieldsAdapter";
+//   private final String MY_DEBUG_TAG = "ArrayFieldsAdapter";
+//   private ArrayList<Field> items;
    private ArrayList<Field> items;
-   private ArrayList<Field> itemsAll;
    private ArrayList<Field> suggestions;
-   private int viewResourceId;
+   private Context context;
+//   private int viewResourceId;
 
-   public ArrayFieldsAdapter(Context context, int viewResourceId, ArrayList<Field> items) {
+   public ArrayFieldsAdapter(Context context, int viewResourceId, ArrayList<Field> items) 
+   {
        super(context, viewResourceId, items);
+//       this.items = items;
+//       this.itemsAll = (ArrayList<Field>) items.clone();
+       this.context = context;
        this.items = items;
-       this.itemsAll = (ArrayList<Field>) items.clone();
        this.suggestions = new ArrayList<Field>();
-       this.viewResourceId = viewResourceId;
+//       this.viewResourceId = viewResourceId;
    }
 
    public View getView(int position, View convertView, ViewGroup parent) 
@@ -72,9 +77,9 @@ public class ArrayFieldsAdapter extends ArrayAdapter<Field>
          if(constraint != null) 
          {
             suggestions.clear();
-            for (Field oField : itemsAll) 
+            for (Field oField : items) 
             {
-               if(oField.sValue.toLowerCase().startsWith(constraint.toString().toLowerCase()))
+               if(oField.sValue.toLowerCase(ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0)).startsWith(constraint.toString().toLowerCase()))
                {
                   suggestions.add(oField);
                }

@@ -87,28 +87,39 @@ public class EditTextUpdatableClearable extends EditTextUpdatable
       // NOTE: The most important.
       setOnTouchListener(new OnTouchListener() 
       {
-          @Override
-          public boolean onTouch(View v, MotionEvent event) 
-          {
-              final int DRAWABLE_RIGHT = 2;
+         @Override
+         public boolean onTouch(View v, MotionEvent event) 
+         {
+            final int DRAWABLE_RIGHT = 2;
+              
+            // Only for warning disposal
+            v.performClick();
 
-              if (event.getAction() == MotionEvent.ACTION_UP) 
-              {
-                  final Drawable rightDrawable = getCompoundDrawables()[DRAWABLE_RIGHT];
-                  if (rightDrawable != null && event.getRawX() >= (getRight() - rightDrawable.getBounds().width())) 
-                  {
-                      if (oCallback != null) oCallback.beforeClear(EditTextUpdatableClearable.this);
-                      setText("");
-                      requestFocus();
-                      if (oCallback != null) oCallback.afterClear(EditTextUpdatableClearable.this);
-                      return true;
-                  }
-              }
-              return false;
-          }
-      });      
+            if (event.getAction() == MotionEvent.ACTION_UP) 
+            {
+               final Drawable rightDrawable = getCompoundDrawables()[DRAWABLE_RIGHT];
+               if (rightDrawable != null && event.getRawX() >= (getRight() - rightDrawable.getBounds().width())) 
+               {
+                  if (oCallback != null) oCallback.beforeClear(EditTextUpdatableClearable.this);
+                     setText("");
+                  requestFocus();
+                  if (oCallback != null) oCallback.afterClear(EditTextUpdatableClearable.this);
+//                      return true;
+               }
+            }
+            return false;
+         }
+      });
+      
    }
    
+   // Only for warning disposal
+   @Override
+   public boolean performClick()
+   {
+      return super.performClick();
+   }
+
    public void setCallback(Callback callback) 
    {
       this.oCallback = callback;

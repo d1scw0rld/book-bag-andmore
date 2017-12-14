@@ -9,7 +9,7 @@ public class FileData implements Comparable<FileData>
    /** Constant that specifies the object is a reference to the parent */
    public static final int UP_FOLDER = 0;
    /** Constant that specifies the object is a folder */
-   public static final int DIRECTORY = 1;
+   public static final int FOLDER = 1;
    /** Constant that specifies the object is a file */
    public static final int FILE = 2;
 
@@ -33,7 +33,7 @@ public class FileData implements Comparable<FileData>
    public FileData(final String fileName, final int fileType)
    {
 
-      if(fileType != UP_FOLDER && fileType != DIRECTORY && fileType != FILE)
+      if(fileType != UP_FOLDER && fileType != FOLDER && fileType != FILE)
       {
          throw new IllegalArgumentException("Illegel type of file");
       }

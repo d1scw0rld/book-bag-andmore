@@ -12,7 +12,6 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -372,7 +371,8 @@ public class BookListActivity extends AppCompatActivity
       getMenuInflater().inflate(R.menu.menu_main, menu);
       
       final MenuItem searchItem = menu.findItem(R.id.action_search);
-      final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+//      final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+      final SearchView searchView = (SearchView) searchItem.getActionView();
       
       searchView.setOnQueryTextListener(new OnQueryTextListener()
       {

@@ -3,6 +3,7 @@ package org.d1scw0rld.bookbag;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.os.ConfigurationCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
@@ -52,7 +53,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
 
 public class EditBookActivity extends AppCompatActivity 
 {
@@ -99,6 +99,7 @@ public class EditBookActivity extends AppCompatActivity
          public void onClick(View v)
          {
             getCurrentFocus().clearFocus();
+            v.requestFocus();
             if(oBook.csTitle.value.trim().isEmpty())
             {
                fBookTitle.setError(getResources().getString(R.string.err_emp_ttl));
@@ -341,7 +342,6 @@ public class EditBookActivity extends AppCompatActivity
 //         oField.setMultiline();
       oField.setUpdateListener(new EditTextX.OnUpdateListener()
       {
-         
          @Override
          public void onUpdate(EditText et)
          {
@@ -431,7 +431,8 @@ public class EditBookActivity extends AppCompatActivity
             boolean isFound = false;
             for(Field f : alFieldValues)
             {
-               if(et.getText().toString().trim().equalsIgnoreCase(((Field)oFieldAutoCompleteTextView.getTag()).sValue))
+//               if(et.getText().toString().trim().equalsIgnoreCase(((Field)oFieldAutoCompleteTextView.getTag()).sValue))
+               if(et.getText().toString().trim().equalsIgnoreCase(f.sValue))
                {
                   isFound = true;
                   ((Field)oFieldAutoCompleteTextView.getTag()).copy(f);
@@ -687,7 +688,8 @@ public class EditBookActivity extends AppCompatActivity
       }
 
       final Price oPrice = new Price(((Changeable<String>) oFieldMoney.getTag()).value);
-      oFieldMoney.setValue(oPrice.iValue);
+      if(oPrice.iValue != 0)
+         oFieldMoney.setValue(oPrice.iValue);
 
       final ArrayList<Field> alCurrencies = oDbAdapter.getFieldValues(DBAdapter.FLD_CURRENCY);
       int iSelected = 0;
@@ -918,19 +920,19 @@ public class EditBookActivity extends AppCompatActivity
 
    public class ArrayFieldsAdapter extends ArrayAdapter<Field> 
    {
-      private final String MY_DEBUG_TAG = "ArrayFieldsAdapter";
+//      private final String MY_DEBUG_TAG = "ArrayFieldsAdapter";
+//      private ArrayList<Field> items;
       private ArrayList<Field> items;
-      private ArrayList<Field> itemsAll;
       private ArrayList<Field> suggestions;
-      private int viewResourceId;
+//      private int viewResourceId;
 
       public ArrayFieldsAdapter(Context context, int viewResourceId, ArrayList<Field> items) 
       {
-          super(context, viewResourceId, items);
-          this.items = items;
-          this.itemsAll = (ArrayList<Field>) items.clone();
-          this.suggestions = new ArrayList<Field>();
-          this.viewResourceId = viewResourceId;
+         super(context, viewResourceId, items);
+         this.items = items;
+//          this.itemsAll = (ArrayList<Field>) items.clone();
+         this.suggestions = new ArrayList<Field>();
+//          this.viewResourceId = viewResourceId;
       }
 
       public View getView(int position, View convertView, ViewGroup parent) 
@@ -963,9 +965,9 @@ public class EditBookActivity extends AppCompatActivity
             if(constraint != null) 
             {
                suggestions.clear();
-               for (Field oField : itemsAll) 
+               for (Field oField : items) 
                {
-                  if(oField.sValue.toLowerCase(Locale.getDefault()).startsWith(constraint.toString().toLowerCase()))
+                  if(oField.sValue.toLowerCase(ConfigurationCompat.getLocales(getResources().getConfiguration()).get(0)).startsWith(constraint.toString().toLowerCase()))
                   {
                      suggestions.add(oField);
                   }

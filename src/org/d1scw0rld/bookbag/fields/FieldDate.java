@@ -6,16 +6,12 @@ import org.d1scw0rld.bookbag.R;
 import org.d1scw0rld.bookbag.dto.Date;
 
 import android.app.Activity;
-//import android.app.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener;
 
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -219,47 +215,47 @@ public class FieldDate extends LinearLayout implements OnDateSetListener
 //      }
 //   }
 
-   private class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener
-   {
-      
-      @Override
-      public Dialog onCreateDialog(Bundle savedInstanceState)
-      {
-         if(date.toInt() == 0)
-         {
-            // Use the current date as the default date in the picker
-            final Calendar c = Calendar.getInstance();
-            date = new Date(c.get(Calendar.DAY_OF_MONTH), c.get(Calendar.MONTH) + 1, c.get(Calendar.YEAR));
-         }
-
-         // Create a new instance of DatePickerDialog and return it
-//         return new DatePickerDialog(getActivity(), this, date.iYear, date.iMonth - 1, date.iDay);
-         
-         datePickerDialog = DatePickerDialog.newInstance(DatePickerFragment.this, date.iYear, date.iMonth - 1, date.iDay);
-
-         datePickerDialog.setThemeDark(false);
-
-         datePickerDialog.showYearPickerFirst(false);
-
-         datePickerDialog.setAccentColor(Color.parseColor("#009688"));
-
-         datePickerDialog.setTitle("Select Date From DatePickerDialog");
-
-         datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
-         
-         return datePickerDialog.getDialog(); 
-      }
-
-      @Override
-      public void onDateSet(DatePickerDialog view,
-                            int year,
-                            int monthOfYear,
-                            int dayOfMonth)
-      {
-         // TODO Auto-generated method stub
-         
-      }
-   }
+//   private class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener
+//   {
+//      
+//      @Override
+//      public Dialog onCreateDialog(Bundle savedInstanceState)
+//      {
+//         if(date.toInt() == 0)
+//         {
+//            // Use the current date as the default date in the picker
+//            final Calendar c = Calendar.getInstance();
+//            date = new Date(c.get(Calendar.DAY_OF_MONTH), c.get(Calendar.MONTH) + 1, c.get(Calendar.YEAR));
+//         }
+//
+//         // Create a new instance of DatePickerDialog and return it
+////         return new DatePickerDialog(getActivity(), this, date.iYear, date.iMonth - 1, date.iDay);
+//         
+//         datePickerDialog = DatePickerDialog.newInstance(DatePickerFragment.this, date.iYear, date.iMonth - 1, date.iDay);
+//
+//         datePickerDialog.setThemeDark(false);
+//
+//         datePickerDialog.showYearPickerFirst(false);
+//
+//         datePickerDialog.setAccentColor(Color.parseColor("#009688"));
+//
+//         datePickerDialog.setTitle("Select Date From DatePickerDialog");
+//
+//         datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+//         
+//         return datePickerDialog.getDialog(); 
+//      }
+//
+//      @Override
+//      public void onDateSet(DatePickerDialog view,
+//                            int year,
+//                            int monthOfYear,
+//                            int dayOfMonth)
+//      {
+//         // TODO Auto-generated method stub
+//         
+//      }
+//   }
    
    
    public void setUpdateListener(OnUpdateListener onUpdateListener)

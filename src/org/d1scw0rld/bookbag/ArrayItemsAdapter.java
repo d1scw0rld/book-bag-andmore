@@ -1,9 +1,9 @@
 package org.d1scw0rld.bookbag;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import android.content.Context;
+import android.support.v4.os.ConfigurationCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -16,7 +16,8 @@ public class ArrayItemsAdapter extends ArrayAdapter<Item>
 {
 //   private final String MY_DEBUG_TAG = "ArrayFieldsAdapter";
 //   private ArrayList<? extends Item> items;
-   private ArrayList<Item> itemsAll;
+   private Context context;
+   private ArrayList<Item> items;
    private ArrayList<Item> suggestions;
 //   private int viewResourceId;
 
@@ -24,7 +25,9 @@ public class ArrayItemsAdapter extends ArrayAdapter<Item>
    {
        super(context, viewResourceId, alDictionaryFields);
 //       this.items = alDictionaryFields1;
-       this.itemsAll = (ArrayList<Item>) alDictionaryFields.clone();
+//       this.itemsAll = (ArrayList<Item>) alDictionaryFields.clone();
+       this.context = context;
+       this.items = alDictionaryFields;
        this.suggestions = new ArrayList<Item>();
 //       this.viewResourceId = viewResourceId;
    }
@@ -59,9 +62,9 @@ public class ArrayItemsAdapter extends ArrayAdapter<Item>
          if(constraint != null) 
          {
             suggestions.clear();
-            for (Item oField : itemsAll) 
+            for (Item oField : items) 
             {
-               if(oField.getValue().toLowerCase(Locale.getDefault()).startsWith(constraint.toString().toLowerCase()))
+               if(oField.getValue().toLowerCase(ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0)).startsWith(constraint.toString().toLowerCase()))
                {
                   suggestions.add(oField);
                }
