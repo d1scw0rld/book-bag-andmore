@@ -181,15 +181,15 @@ public class DBAdapter
 		FIELD_TYPES.add(new FieldType(FLD_PUBLICATION_LOCATION, r.getString(R.string.fld_publication_location), FieldType.TYPE_TEXT_AUTOCOMPLETE));
 		FIELD_TYPES.add(new FieldType(FLD_EDITION, r.getString(R.string.fld_edition), FieldType.TYPE_TEXT).setInputType(InputType.TYPE_CLASS_NUMBER));
 		FIELD_TYPES.add(new FieldType(FLD_PRICE, r.getString(R.string.fld_price), FieldType.TYPE_MONEY).setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL));
+      FIELD_TYPES.add(new FieldType(FLD_VALUE, r.getString(R.string.fld_value), FieldType.TYPE_MONEY).setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL));
 		FIELD_TYPES.add(new FieldType(FLD_STATUS, r.getString(R.string.fld_status), FieldType.TYPE_SPINNER));
 		FIELD_TYPES.add(new FieldType(FLD_LOANED_TO, r.getString(R.string.fld_loaned_to), FieldType.TYPE_TEXT_AUTOCOMPLETE));
-		FIELD_TYPES.add(new FieldType(FLD_VALUE, r.getString(R.string.fld_value), FieldType.TYPE_MONEY).setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL));
 		FIELD_TYPES.add(new FieldType(FLD_READ, r.getString(R.string.fld_read), FieldType.TYPE_CHECK_BOX));
 		FIELD_TYPES.add(new FieldType(FLD_READ_DATE, r.getString(R.string.fld_read_date), FieldType.TYPE_DATE));
 		FIELD_TYPES.add(new FieldType(FLD_RATING, r.getString(R.string.fld_rating), FieldType.TYPE_RATING));
 		FIELD_TYPES.add(new FieldType(FLD_FORMAT, r.getString(R.string.fld_format), FieldType.TYPE_SPINNER));
+      FIELD_TYPES.add(new FieldType(FLD_CONDITION, r.getString(R.string.fld_condition), FieldType.TYPE_SPINNER));
 		FIELD_TYPES.add(new FieldType(FLD_LOCATION, r.getString(R.string.fld_location), FieldType.TYPE_TEXT_AUTOCOMPLETE));
-		FIELD_TYPES.add(new FieldType(FLD_CONDITION, r.getString(R.string.fld_condition), FieldType.TYPE_SPINNER));
 		FIELD_TYPES.add(new FieldType(FLD_DUE_DATE, r.getString(R.string.fld_due_date), FieldType.TYPE_DATE));
 		FIELD_TYPES.add(new FieldType(FLD_ISBN, r.getString(R.string.fld_isbn), FieldType.TYPE_TEXT).setInputType(InputType.TYPE_CLASS_NUMBER));
 		FIELD_TYPES.add(new FieldType(FLD_WEB, r.getString(R.string.fld_web), FieldType.TYPE_TEXT));
